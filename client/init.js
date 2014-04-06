@@ -68,13 +68,13 @@
         
         
         var globalOpacity = 1;
-        var globalSecondaryColor = 'white';
+        var globalStrokeColor = 'white';
         var globalStrokeWidth = mainRadius * Math.pow(0.618, 5);
         var globalBlendMode = 'overlay';
         
         var globalIntersectionRadius = function (i) { return (i+2)*6 };
-        var globalIntersectionBlendMode = 'overlay';
-        var globalIntersectionFillColor = 'white';
+        var globalIntersectionBlendMode = 'subtract';
+        var globalIntersectionFillColor = 'black';
         
         ///////////////////////////////////////////////////
         //..............................................
@@ -127,7 +127,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         path1.strokeWidth = globalStrokeWidth;
         path1.blendMode = globalBlendMode;
         path1.opacity = globalOpacity;
-        path1.strokeColor = '#fff';
+        path1.strokeColor = globalStrokeColor;
         path1.fillColor = {
             gradient: {
                 stops: [ ['black', 0], ['red', 1] ],
@@ -158,7 +158,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             console.log("position>", position);
             path2 = new Path.Circle(position, mainRadius);
             path2.opacity = globalOpacity;
-            path2.strokeColor = globalSecondaryColor;
+            path2.strokeColor = globalStrokeColor;
             path2.fillColor = {
                 gradient: {
                     stops: [
@@ -182,7 +182,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             console.log("position>", position);
             path3 = new Path.Circle(position, mainRadius);
             path3.opacity = globalOpacity;
-            path3.strokeColor = globalSecondaryColor;
+            path3.strokeColor = globalStrokeColor;
             path3.fillColor = {
                 gradient: {
                     stops: [
@@ -206,7 +206,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             console.log("position>", position);
             path4 = new Path.Circle(position, mainRadius);
             path4.opacity = globalOpacity;
-            path4.strokeColor = globalSecondaryColor;
+            path4.strokeColor = globalStrokeColor;
             path4.fillColor = {
                 gradient: {
                     stops: [
@@ -231,7 +231,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             console.log("position>", position);
             path5 = new Path.Circle(position, mainRadius);
             path5.opacity = globalOpacity;
-            path5.strokeColor = globalSecondaryColor;
+            path5.strokeColor = globalStrokeColor;
             path5.fillColor = {
                 gradient: {
                     stops: [
@@ -256,7 +256,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             console.log("position>", position);
             path6 = new Path.Circle(position, mainRadius);
             path6.opacity = globalOpacity;
-            path6.strokeColor = globalSecondaryColor;
+            path6.strokeColor = globalStrokeColor;
             path6.fillColor = {
                 gradient: {
                     stops: [
@@ -281,7 +281,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             path7 = new Path.Circle(position, mainRadius);
             //path7 = path7.subtract(path3);
             path7.opacity = globalOpacity;
-            path7.strokeColor = globalSecondaryColor;
+            path7.strokeColor = globalStrokeColor;
             path7.fillColor = {
                 gradient: {
                     stops: [
@@ -306,7 +306,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
             path8 = new Path.Circle(position, mainRadius);
             //path8 = path2.subtract(path3).subtract(path4);
             path8.opacity = globalOpacity;
-            path8.strokeColor = globalSecondaryColor;
+            path8.strokeColor = globalStrokeColor;
             path8.fillColor = {
                 gradient: {
                     stops: [
@@ -319,18 +319,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
                 destination: path2.bounds.rightCenter
             };
         
-/*        
 
-            intersections = path7.getIntersections(path1);
-            if (intersections.length > 2) {
-                intersections = [intersections[0], intersections[2]]
-            }
-            position = intersections[0].point;
-            console.log("position>", position);
-            path8 = new Path.Circle(position, mainRadius);
-            path8.opacity = globalOpacity;
-            path8.strokeColor = globalSecondaryColor;
- /*       */
         var flowerGroup1 = new Group();
         flowerGroup1.addChild(path2);
         flowerGroup1.addChild(path3);
@@ -362,7 +351,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path9 = new Path.Circle(position, mainRadius);
         path9.opacity = globalOpacity;
-        path9.strokeColor = globalSecondaryColor;
+        path9.strokeColor = globalStrokeColor;
         path9.fillColor = {
             gradient: {
                 stops: [
@@ -385,7 +374,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path10 = new Path.Circle(position, mainRadius);
         path10.opacity = globalOpacity;
-        path10.strokeColor = globalSecondaryColor;
+        path10.strokeColor = globalStrokeColor;
         path10.fillColor = {
             gradient: {
                 stops: [
@@ -408,7 +397,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path11 = new Path.Circle(position, mainRadius);
         path11.opacity = globalOpacity;
-        path11.strokeColor = globalSecondaryColor;
+        path11.strokeColor = globalStrokeColor;
         path11.fillColor = {
             gradient: {
                 stops: [
@@ -431,7 +420,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path12 = new Path.Circle(position, mainRadius);
         path12.opacity = globalOpacity;
-        path12.strokeColor = globalSecondaryColor;
+        path12.strokeColor = globalStrokeColor;
         path12.fillColor = {
             gradient: {
                 stops: [
@@ -454,7 +443,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path13 = new Path.Circle(position, mainRadius);
         path13.opacity = globalOpacity;
-        path13.strokeColor = globalSecondaryColor;
+        path13.strokeColor = globalStrokeColor;
         path13.fillColor = {
             gradient: {
                 stops: [
@@ -477,7 +466,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path14 = new Path.Circle(position, mainRadius);
         path14.opacity = globalOpacity;
-        path14.strokeColor = globalSecondaryColor;
+        path14.strokeColor = globalStrokeColor;
         path14.fillColor = {
             gradient: {
                 stops: [
@@ -524,7 +513,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path15 = new Path.Circle(position, mainRadius);
         path15.opacity = globalOpacity;
-        path15.strokeColor = globalSecondaryColor;
+        path15.strokeColor = globalStrokeColor;
         path15.fillColor = {
             gradient: {
                 stops: [
@@ -548,7 +537,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path16 = new Path.Circle(position, mainRadius);
         path16.opacity = globalOpacity;
-        path16.strokeColor = globalSecondaryColor;
+        path16.strokeColor = globalStrokeColor;
         path16.fillColor = {
             gradient: {
                 stops: [
@@ -572,7 +561,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path17 = new Path.Circle(position, mainRadius);
         path17.opacity = globalOpacity;
-        path17.strokeColor = globalSecondaryColor;
+        path17.strokeColor = globalStrokeColor;
         path17.fillColor = {
             gradient: {
                 stops: [
@@ -596,7 +585,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path18 = new Path.Circle(position, mainRadius);
         path18.opacity = globalOpacity;
-        path18.strokeColor = globalSecondaryColor;
+        path18.strokeColor = globalStrokeColor;
         path18.fillColor = {
             gradient: {
                 stops: [
@@ -620,7 +609,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path19 = new Path.Circle(position, mainRadius);
         path19.opacity = globalOpacity;
-        path19.strokeColor = globalSecondaryColor;
+        path19.strokeColor = globalStrokeColor;
         path19.fillColor = {
             gradient: {
                 stops: [
@@ -644,7 +633,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path20 = new Path.Circle(position, mainRadius);
         path20.opacity = globalOpacity;
-        path20.strokeColor = globalSecondaryColor;
+        path20.strokeColor = globalStrokeColor;
         path20.fillColor = {
             gradient: {
                 stops: [
@@ -691,7 +680,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path21 = new Path.Circle(position, mainRadius);
         path21.opacity = globalOpacity;
-        path21.strokeColor = globalSecondaryColor;
+        path21.strokeColor = globalStrokeColor;
         path21.fillColor = {
             gradient: {
                 stops: [
@@ -715,7 +704,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path22 = new Path.Circle(position, mainRadius);
         path22.opacity = globalOpacity;
-        path22.strokeColor = globalSecondaryColor;
+        path22.strokeColor = globalStrokeColor;
         path22.fillColor = {
             gradient: {
                 stops: [
@@ -739,7 +728,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path23 = new Path.Circle(position, mainRadius);
         path23.opacity = globalOpacity;
-        path23.strokeColor = globalSecondaryColor;
+        path23.strokeColor = globalStrokeColor;
         path23.fillColor = {
             gradient: {
                 stops: [
@@ -763,7 +752,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path24 = new Path.Circle(position, mainRadius);
         path24.opacity = globalOpacity;
-        path24.strokeColor = globalSecondaryColor;
+        path24.strokeColor = globalStrokeColor;
         path24.fillColor = {
             gradient: {
                 stops: [
@@ -787,7 +776,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path25 = new Path.Circle(position, mainRadius);
         path25.opacity = globalOpacity;
-        path25.strokeColor = globalSecondaryColor;
+        path25.strokeColor = globalStrokeColor;
         path25.fillColor = {
             gradient: {
                 stops: [
@@ -811,7 +800,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path26 = new Path.Circle(position, mainRadius);
         path26.opacity = globalOpacity;
-        path26.strokeColor = globalSecondaryColor;
+        path26.strokeColor = globalStrokeColor;
         path26.fillColor = {
             gradient: {
                 stops: [
@@ -835,7 +824,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path27 = new Path.Circle(position, mainRadius);
         path27.opacity = globalOpacity;
-        path27.strokeColor = globalSecondaryColor;
+        path27.strokeColor = globalStrokeColor;
         path27.fillColor = {
             gradient: {
                 stops: [
@@ -859,7 +848,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path28 = new Path.Circle(position, mainRadius);
         path28.opacity = globalOpacity;
-        path28.strokeColor = globalSecondaryColor;
+        path28.strokeColor = globalStrokeColor;
         path28.fillColor = {
             gradient: {
                 stops: [
@@ -883,7 +872,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[1].point;
         path29 = new Path.Circle(position, mainRadius);
         path29.opacity = globalOpacity;
-        path29.strokeColor = globalSecondaryColor;
+        path29.strokeColor = globalStrokeColor;
         path29.fillColor = {
             gradient: {
                 stops: [
@@ -907,7 +896,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path30 = new Path.Circle(position, mainRadius);
         path30.opacity = globalOpacity;
-        path30.strokeColor = globalSecondaryColor;
+        path30.strokeColor = globalStrokeColor;
         path30.fillColor = {
             gradient: {
                 stops: [
@@ -931,7 +920,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path31 = new Path.Circle(position, mainRadius);
         path31.opacity = globalOpacity;
-        path31.strokeColor = globalSecondaryColor;
+        path31.strokeColor = globalStrokeColor;
         path31.fillColor = {
             gradient: {
                 stops: [
@@ -955,7 +944,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         position = intersections[0].point;
         path32 = new Path.Circle(position, mainRadius);
         path32.opacity = globalOpacity;
-        path32.strokeColor = globalSecondaryColor;
+        path32.strokeColor = globalStrokeColor;
         path32.fillColor = {
             gradient: {
                 stops: [
@@ -1095,7 +1084,7 @@ console.log("intersections["+i+"].point", intersections[i].point);
         path1 = new Path.Circle(position, mainRadius);
         path1.strokeWidth = 10;
         path1.opacity = 0.618;
-        path1.strokeColor = globalSecondaryColor;
+        path1.strokeColor = globalStrokeColor;
         path1.fillColor = {
             gradient: {
                 stops: [
